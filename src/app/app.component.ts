@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BookService } from './app.service';
+import { IBooks } from 'src/app/IBooks';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PBI';
+  bookTitles$=this.service.getBooks()
+  constructor(private service:BookService){}
+  ngOnInit(){
+        
+    }
 }
