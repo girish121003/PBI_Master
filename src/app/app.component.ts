@@ -12,6 +12,8 @@ export class AppComponent {
   bookTitles$=this.service.getBooks()
   constructor(private service:BookService){}
   ngOnInit(){
-        
+        this.bookTitles$.subscribe(resp=>{
+          console.log(resp)
+        })
     }
 }
